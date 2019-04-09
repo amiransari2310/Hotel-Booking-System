@@ -1,0 +1,19 @@
+{
+  "name": "hbs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha tests/**.*.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "expect": "^24.7.1",
+    "express": "^4.16.4",
+    "mocha": "^6.1.2",
+    "mongoose": "^5.4.22",
+    "request-promise": "^4.2.4",
+    "supertest": "^4.0.2"
+  }
+}

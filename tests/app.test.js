@@ -46,7 +46,7 @@ describe('GET /hotel', () => {
         .end(done);
     });
 
-    it('Success Case With Filters Should Return Filtered hotels', (done) => {
+    it('Success Case With Filters Should Return filtered hotels', (done) => {
         request(app)
         .get('/hotel?filter={"_id":"' + testId + '"}')
         .expect(200)

@@ -20,6 +20,7 @@ Note: Make sure mongo db server is up and running on your local machine
 -> /hotel:
 
 URI: http://localhost:3000/hotel
+
 Description: API to get list of hotels
 
 Query Params:
@@ -27,12 +28,14 @@ Query Params:
 filter: Stringify JSON Object to filter documents
 
 Response Strcture:
+
 { "statusCode": String, "status": String, "message": String, "data": [{}] }
 
 -> /hotel/:id
-Description: API to get a specific hotel using Id
 
 URI: http://localhost:3000/hotel/:id
+
+Description: API to get a specific hotel using Id
 
 Query Params: None
 
@@ -41,11 +44,13 @@ Route Param:
 id: String
 
 Response Strcture:
+
 { "statusCode": String, "status": String, "message": String, "data": {} }
 
 -> /user:
 
 URI: http://localhost:3000/user
+
 Description: API to get list of users
 
 Query Params:
@@ -53,11 +58,13 @@ Query Params:
 filter: Stringify JSON Object to filter documents
 
 Response Strcture:
+
 { "statusCode": String, "status": String, "message": String, "data": [{}] }
 
 -> /user/:id
 
 URI: http://localhost:3000/user/:id
+
 Description: API to get a specific user using Id
 
 Query Params: None
@@ -67,6 +74,7 @@ Route Param:
 id: String
 
 Response Strcture:
+
 { "statusCode": String, "status": String, "message": String, "data": {} }
 
 => POST URL's:
@@ -74,6 +82,7 @@ Response Strcture:
 -> /hotel
 
 URI: http://localhost:3000/hotel
+
 Description: API to add a hotel
 
 Query Params: None
@@ -81,6 +90,7 @@ Query Params: None
 Route Param: None
 
 Request Strcture:
+
 {   
     "hotel_name" : String,
     "rooms": [{
@@ -89,11 +99,13 @@ Request Strcture:
 }
 
 Response Strcture:
+
 { "statusCode": String, "status": String, "message": String, "data": {} }
 
 -> /user
 
 URI: http://localhost:3000/user
+
 Description: API to add a user
 
 Query Params: None
@@ -101,16 +113,19 @@ Query Params: None
 Route Param: None
 
 Request Strcture:
+
 {   
     "user_name": String
 }
 
 Response Strcture:
+
 { "statusCode": String, "status": String, "message": String, "data": {} }
 
 -> /hotel/room/:id
 
 URI: http://localhost:3000/hotel/room/:id
+
 Description: API to add a room to a hotel
 
 Route Param:
@@ -118,16 +133,19 @@ Route Param:
 id: String
 
 Request Strcture:
+
 {   
     "room_number": String
 }
 
 Response Strcture:
+
 { "statusCode": String, "status": String, "message": String, "data": {} }
 
 -> /hotel/getAvailableRooms/:id
 
 URI: http://localhost:3000/hotel/getAvailableRooms/:id
+
 Description: API to get all available rooms in a hotel
 
 Route Param:
@@ -135,51 +153,62 @@ Route Param:
 id: String
 
 Request Strcture:
+
 {   
     "fromDate": Date,
     "tillDate": Date
 }
 
 Response Strcture:
+
 { "statusCode": String, "status": String, "message": String, "data": {"id": String, "availableRooms": [String]} }
 
 -> /hotel/bookRoom/:hotelId/:userId
 
 URI: http://localhost:3000/hotel/bookRoom/:hotelId/:userId
+
 Description: API to book a room in a hotel
 
 Route Param:
 
 hotelId: String,
+
 userId: String
 
 Request Strcture:
+
 {   
     "fromDate": Date,
     "tillDate": Date
 }
 
 Response Strcture:
+
 { "statusCode": String, "status": String, "message": String, "data": {"room_id": String, "booked_by": String, "from_date": Date, "till_date": Date} }
 
 -> /hotel/bookRoom/:hotelId/:roomId/:useId
 
 URI: http://localhost:3000/hotel/bookRoom/:hotelId/:roomId/:userId
+
 Description: API to book a room in a specific room in a hotel
 
 Route Param:
 
 hotelId: String,
+
 roomId: String,
+
 userId: String
 
 Request Strcture:
+
 {   
     "fromDate": Date,
     "tillDate": Date
 }
 
 Response Strcture:
+
 { "statusCode": String, "status": String, "message": String, "data": {"room_id": String, "booked_by": String, "from_date": Date, "till_date": Date} }
 
 => PUT URL's:
@@ -187,6 +216,7 @@ Response Strcture:
 -> /hotel/:id
 
 URI: http://localhost:3000/hotel/:id
+
 Description: API to update a hotel
 
 Query Params: None
@@ -196,6 +226,7 @@ Route Param:
 id: String
 
 Request Strcture:
+
 {   
     "hotel_name" : String,
     "rooms": [{
@@ -209,11 +240,13 @@ Request Strcture:
 }
 
 Response Strcture:
+
 { "statusCode": String, "status": String, "message": String, "data": {} }
 
 -> /user/:id
 
 URI: http://localhost:3000/user/:id
+
 Description: API to update a user
 
 Query Params: None
@@ -223,6 +256,7 @@ Route Param:
 id: String
 
 Request Strcture:
+
 {   
     "user_name": String,
     "active_bookings": [{
@@ -234,6 +268,7 @@ Request Strcture:
 }
 
 Response Strcture:
+
 { "statusCode": String, "status": String, "message": String, "data": {} }
 
 => DELETE URL's:
@@ -241,6 +276,7 @@ Response Strcture:
 -> /hotel/:id
 
 URI: http://localhost:3000/hotel/:id
+
 Description: API to delete a hotel
 
 Query Params: None
@@ -250,11 +286,13 @@ Route Param:
 id: String
 
 Response Strcture:
+
 { "statusCode": String, "status": String, "message": String, "data": {} }
 
 -> /user/:id
 
 URI: http://localhost:3000/user/:id
+
 Description: API to delete a user
 
 Query Params: None
@@ -264,4 +302,5 @@ Route Param:
 id: String
 
 Response Strcture:
+
 { "statusCode": String, "status": String, "message": String, "data": {} }

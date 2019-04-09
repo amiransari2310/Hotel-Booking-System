@@ -12,9 +12,7 @@ Output: JSON Object
 list = async (req, res) => {
 	try {
 		let filter = (req.query.filter) ? JSON.parse(req.query.filter) : {};
-		let query = await model.find(filter).lean();
-		query = (req.query.expand && req.query.expand === 'true') ? query.populate('rooms.booked_by') : query;
-		let hotels = await query.exec();
+		let hotels = await model.find(filter).lean();
 		if(!hotels || (hotels && hotels.length === 0)) res.status(200).json({statusCode: 204, status: "NO_CONTENT", message: "No Hotels Found.", data: hotels || []});
 		else res.status(200).json({statusCode: 200, status: "SUCCESS", message: "Hotels Fetched Successfully.", data: hotels});
 	} catch(err) {
